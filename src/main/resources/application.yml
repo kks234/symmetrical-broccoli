@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: false
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    properties:
+#      hibernate.dialect: org.hibernate.dialect.SQLiteDialect
+
+  datasource-sqlite:
+        driver-class-name: org.sqlite.JDBC
+        url: "jdbc:sqlite:D:\\dev\\ADsync\\ADsync\\sqllite\\newDb.db"
+  datasource-tibero:
+        driver-class-name: com.tmax.tibero.jdbc.TbDriver
+        url: "jdbc:tibero:thin:@localhost:8629:tibero"
+        username: sys
+        password: tibero

@@ -1,0 +1,38 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.7'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.develop'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.hibernate:hibernate-core:5.4.29.Final'
+	implementation 'org.xerial:sqlite-jdbc:3.39.4.1'
+//	implementation 'net.kemitix:sqlite-dialect:0.1.0'
+//	implementation 'org.hibernate.dialect:sqlite-dialect:0.1.0'
+	implementation 'com.github.gwenn:sqlite-dialect:0.1.2'
+	implementation files('./tibero-6.jar')
+//	compileOnly 'jdbc.tibero:tibero:6'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+//
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
